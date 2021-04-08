@@ -4,7 +4,7 @@ class Berzerker extends Character {
         this.classes = classes;
         this.advanced = 0;
     };
-    special () {
+    specialL () {
         oppressor.dmg = oppressor.dmg + 2;
         oppressor.hp = oppressor.hp - 1;
         console.log(`my strength is increasing but my health is decreasing`);

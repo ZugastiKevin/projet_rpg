@@ -4,7 +4,7 @@ class Assassin extends Character {
         this.classes = classes;
         this.advanced = 7;
     };
-    special () {
+    specialL () {
         oppressor.mana = oppressor.mana - 20;
         console.log(`Seven blow`);
     };

@@ -4,7 +4,7 @@ class Monk extends Character {
         this.classes = classes;
         this.advanced = 0;
     };
-    special () {
+    specialL () {
         oppressor.hp = oppressor.hp + 8;
         oppressor.mana = oppressor.mana - 25;
         console.log(`Heal !`);
