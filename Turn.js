@@ -67,7 +67,7 @@ class Turn extends Game {
   };
 
   specialOrBasic () {
-    let choice = window.prompt(`You are the Oppressor: ${oppressor.name}\n - 1 Basic Attack \n - 2 ${oppressor.special}\n Choose wisely.`);
+    let choice = window.prompt(`You are the Oppressor: ${oppressor.name}\n - 1 Basic Attack \n - 2 Advanced Attack ${oppressor.special}\n Choose wisely.`);
 
     if (choice == 1) {
       victim.takeDamage(oppressor.dmg);
