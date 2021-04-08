@@ -5,7 +5,13 @@ class Fighter extends Character {
         this.advanced = 1;
     };
     specialL () {
-        oppressor.mana = oppressor.mana - 20;
-        console.log(`take my sword !`);
+        if (oppressor.mana <= 19 ) {
+            console.log(`I dont have enought mana !`);
+            game.specialOrBasic();
+        }
+        else {
+            oppressor.mana = oppressor.mana - 20;
+            console.log(`take my sword !`);
+        };
     };
 };

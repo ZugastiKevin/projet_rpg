@@ -5,8 +5,15 @@ class Paladin extends Character {
         this.advanced = 4;
     };
     specialL () {
-        oppressor.hp = oppressor.hp + 5;
-        oppressor.mana = oppressor.mana - 40;
-        console.log(`Healing light for my enemy ! `);
+        if (oppressor.mana <= 39 ) {
+            console.log(`I dont have enought mana !`);
+            game.specialOrBasic();
+        }
+        else {
+            oppressor.hp = oppressor.hp + 5;
+            oppressor.mana = oppressor.mana - 40;
+            console.log(`Healing light for my enemy ! `);
+        };
     }
+
 };

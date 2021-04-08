@@ -73,12 +73,12 @@ class Turn extends Game {
       victim.takeDamage(oppressor.dmg);
       console.log(oppressor.dealDamage(victim));
     }
-    else if (choice == 2){
+    else if (choice == 2) {
       oppressor.specialL();
       victim.takeDamage((oppressor.dmg + oppressor.advanced));
       console.log(oppressor.dealSpecialDamage(victim));
     }
-    else{
+    else {
       game.specialOrBasic();
     };
   };

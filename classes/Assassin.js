@@ -5,7 +5,13 @@ class Assassin extends Character {
         this.advanced = 7;
     };
     specialL () {
-        oppressor.mana = oppressor.mana - 20;
-        console.log(`Seven blow`);
+        if (oppressor.mana <= 19 ) {
+            console.log(`I dont have enought mana !`);
+            game.specialOrBasic();
+        }
+        else {
+            oppressor.mana = oppressor.mana - 20;
+            console.log(`Seven blow`);
+        };
     };
 };

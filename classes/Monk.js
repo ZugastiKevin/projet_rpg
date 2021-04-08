@@ -5,8 +5,14 @@ class Monk extends Character {
         this.advanced = 0;
     };
     specialL () {
-        oppressor.hp = oppressor.hp + 8;
-        oppressor.mana = oppressor.mana - 25;
-        console.log(`Heal !`);
+        if (oppressor.mana <= 24 ) {
+            console.log(`I dont have enought mana !`);
+            game.specialOrBasic();
+        }
+        else {
+            oppressor.hp = oppressor.hp + 8;
+            oppressor.mana = oppressor.mana - 25;
+            console.log(`Heal !`);
+        };
     };
 };
