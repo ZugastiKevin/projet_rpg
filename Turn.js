@@ -39,7 +39,7 @@ class Turn extends Game {
   };
 
   declareVictim () {
-    let declareVictimEval = window.prompt(`You are the Oppressor: ${oppressor.name}\n Selecte a victim. grace, ulder, moana, draven, carl`);
+    let declareVictimEval = window.prompt(`You are the Oppressor: ${oppressor.name}\n Selecte your victim. grace, ulder, moana, draven, carl`);
     let declareVictim = declareVictimEval.toLowerCase();
 
     if (declareVictim == "grace" && grace.status == "playing") {
@@ -66,14 +66,30 @@ class Turn extends Game {
     };
   };
 
+  specialOrBasic () {
+    let choice = window.prompt(`You are the Oppressor: ${oppressor.name}\n - 1 Basic Attack \n - 2 ${oppressor.special}\n Choose wisely.`);
+
+    if (choice == 1) {
+      victim.takeDamage(oppressor.dmg);
+      console.log(oppressor.dealDamage(victim));
+    }
+    else if (choice == 2){
+      oppressor.specialL();
+      victim.takeDamage((oppressor.dmg + oppressor.advanced));
+      console.log(oppressor.dealSpecialDamage(victim));
+    }
+    else{
+      game.specialOrBasic();
+    };
+  };
+
 
   gameTurn () {
     console.log(turn.startTurn());
     turn.watchStats();
     turn.declareOppressor();
     turn.declareVictim();
-    victim.takeDamage(oppressor);
-    console.log(oppressor.dealDamage(victim));
+    turn.specialOrBasic();
     turn.newTurn();
   };
 };

@@ -12,6 +12,8 @@ const allPlayer = [grace, ulder, moana, draven, carl]
 
 let oppressor = carl;
 let victim;
+let choice;
 let loser = 0;
+let attack = 0
 
 turn.gameTurn();
